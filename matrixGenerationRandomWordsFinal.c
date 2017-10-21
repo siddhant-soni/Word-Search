@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<ctype.h>
 #include<time.h>
 #include<string.h>
 #include "searchmat.h" 
@@ -452,6 +453,8 @@ void main()
    { printf("Enter a 3-letter / 4-letter Word:");
     scanf("%s",word);
     len=strlen(word);
+     for(i=0;i<len;i++)
+    {word[i]=toupper(word[i]);}
    }while(len<3 || len>4);
   is_word_in_matrix=locate(word,a); 
   if(is_word_in_matrix==1)
